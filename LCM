@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+int LCMnum( int,int );
+int main()
+{
+    int num1 , num2 , lcm;
+    printf("Enter two numbers : \n");
+    scanf("%d%d",&num1 , &num2);
+    lcm = LCMnum (num1 , num2);
+    printf("the LCM of the two numbers is : %d", lcm);
+    return 0;
+}
+int LCMnum( int a,int b )
+{
+    static int i=0;
+    i = i + b;
+    if (i%a==0 && i%b==0)
+        return i;
+    return LCMnum(a , b);
+}
