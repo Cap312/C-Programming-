@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<string.h>
+
+int main()
+{
+    FILE *f1,*f2;
+    char name1[20],name2[20];
+    char newch[50],ch;
+    int i,j,x;
+    printf("Enter the name of file 1:\n");
+    scanf("%s",name1);
+    printf("Enter the name of file 2:\n");
+    scanf("%s",name2);
+    f1=fopen(name1,"r");
+    f2=fopen(name2,"w");
+    if(f1==NULL || f2==NULL)
+    {
+        printf("Error. File cannot be opened\n");
+        return 1;
+    }
+
+    //ch = getc(f1);
+    while(ch != EOF)
+    {
+        x++;
+        ch = fgetc(f1);
+    }
+
+    for(j=(x-1); j>=0; j--)
+    {
+        ch = newch[j];
+        fputc(f2,ch);
+    }
+
+    fclose(f1);
+    fclose(f2);
+    getche();
+    return 0;
+}
