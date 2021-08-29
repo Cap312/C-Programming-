@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+struct employee
+{
+    char empname [20];
+    long int empno;
+    char dept [20];
+    int salary;
+    int age;
+};
+
+void print_empDetails (struct employee E[20],int n)
+{
+    int i;
+    for (i=0;i<n;i++)
+    {
+        printf("Employee No. - %d\n",i);
+        printf("%s\n",E[i].empname);
+        printf("%d\n",E[i].age);
+        printf("%d\n",E[i].empno);
+        printf("%s\n",E[i].dept);
+        printf("%d\n",E[i].salary);
+    }
+}
+
+int main ()
+{
+    struct employee E[20];
+    int i,n;
+    printf ("Enter number of employees :\n");
+    scanf("%d",&n);
+    for (i=0;i<n;i++)
+    {
+        printf("Enter name of employee:\n");
+        scanf("%s",E[i].empname);
+        printf("Enter age of employee:\n");
+        scanf("%d",&E[i].age);
+        printf("Enter phone number of employee:\n");
+        scanf("%d",&E[i].empno);
+        printf("Enter department of employee:\n");
+        scanf("%s",E[i].dept);
+        printf("Enter salary of employee:\n");
+        scanf("%d",&E[i].salary);
+    }
+    print_empDetails(E,n);
+    return 0;
+}
